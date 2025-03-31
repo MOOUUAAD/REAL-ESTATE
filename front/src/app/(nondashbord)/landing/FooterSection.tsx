@@ -11,16 +11,16 @@ import {
 
 const FooterSection = () => {
   return (
-    <footer className="border-t border-gray-200 !py-20">
-      <div className="!max-w-4xl !mx-auto !px-6 !sm:px-8">
+    <footer className="border-t border-gray-200 py-20">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="!mb-4">
+          <div className="mb-4">
             <Link href="/" className="text-xl font-bold" scroll={false}>
               RENTIFUL
             </Link>
           </div>
-          <nav className="!mb-4">
-            <ul className="!flex !space-x-6">
+          <nav className="mb-4">
+            <ul className="flex space-x-6">
               <li>
                 <Link href="/about">About Us</Link>
               </li>
@@ -38,7 +38,7 @@ const FooterSection = () => {
               </li>
             </ul>
           </nav>
-          <div className="flex !space-x-4 !mb-4">
+          <div className="flex space-x-4 mb-4">
             <a
               href="#"
               aria-label="Facebook"
@@ -68,7 +68,7 @@ const FooterSection = () => {
             </a>
           </div>
         </div>
-        <div className="!mt-8 text-center text-sm text-gray-500 flex justify-center !space-x-4">
+        <div className="mt-8 text-center text-sm text-gray-500 flex justify-center space-x-4">
           <span>© RENTiful. All rights reserved.</span>
           <Link href="/privacy">Privacy Policy</Link>
           <Link href="/terms">Terms of Service</Link>
