@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import { Authenticator } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
+import React from 'react';
 
 Amplify.configure({
     Auth:{
@@ -11,17 +12,15 @@ Amplify.configure({
         }
     }
 });
-
-export default function App({ Component, pageProps }: AppProps) {
+const Auth = ({ children }: {children: React.ReactNode})=> {
   return (
+    <div className='h-full'>
     <Authenticator>
-      {({ signOut, user }) => (
-        <main>
-          <h1>Hello {user?.username}</h1>
-          <button onClick={signOut}>Sign out</button>
-          <Component {...pageProps} />
-        </main>
-      )}
+        {()=><>{children}</>}
     </Authenticator>
+    </div>
   );
 };
+
+
+export default Auth;
