@@ -4,6 +4,10 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+import { authMiddleware } from "./middleware/authMiddleware";
+/* ROUTE IMPORT */
+import tenantRoutes from "./routes/tenantRoutes";
+
 
 
 dotenv.config();
@@ -20,6 +24,9 @@ app.use(cors());
 app.get('/', (req,res)=>{
     res.send("THIS IS THE HOME ROUTE!")
 });
+
+
+app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
 
 const port = process.env.PORT || 3002
 app.listen(port, ()=>{
