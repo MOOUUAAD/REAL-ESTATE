@@ -7,6 +7,7 @@ import { Button } from './ui/button'
 import { useGetAuthUserQuery } from '@/state/api';
 import { usePathname, useRouter } from 'next/navigation';
 import { signOut } from 'aws-amplify/auth';
+import { MessageCircle, Plus, Search } from 'lucide-react';
 
 
 
@@ -44,28 +45,30 @@ const Navbar = () => {
                     
                     {isDashboardPage && authUser && (
             <Button
-              variant="secondary"
-              className="md:ml-4 bg-primary-50 text-primary-700 hover:bg-secondary-500 hover:text-primary-50"
-              onClick={() =>
-                router.push(
-                  authUser.userRole?.toLowerCase() === "manager"
-                    ? "/managers/newproperty"
-                    : "/search"
-                )
-              }
-            >
-              {authUser.userRole?.toLowerCase() === "manager" ? (
-                <>
-                  <span className="hidden md:block ml-2">Add New Property</span>
-                </>
-              ) : (
-                <>
-                  <span className="hidden md:block ml-2">
-                    Search Properties
-                  </span>
-                </>
-              )}
-            </Button>
+            variant="secondary"
+            className="md:ml-4 bg-primary-50 text-primary-700 hover:bg-secondary-500 hover:text-primary-50"
+            onClick={() =>
+              router.push(
+                authUser.userRole?.toLowerCase() === "manager"
+                  ? "/managers/newproperty"
+                  : "/search"
+              )
+            }
+          >
+            {authUser.userRole?.toLowerCase() === "manager" ? (
+              <>
+                <Plus className="h-4 w-4" />
+                <span className="hidden md:block ml-2">Add New Property</span>
+              </>
+            ) : (
+              <>
+                <Search className="h-4 w-4" />
+                <span className="hidden md:block ml-2">
+                  Search Properties
+                </span>
+              </>
+            )}
+          </Button>
           )}
 
                 </div>
@@ -75,13 +78,21 @@ const Navbar = () => {
           </p>
         )}
                         <div className='flex items-center gap-5 '>
+                        {authUser ? (
+            <>
+              <div className="relative hidden md:block">
+                <MessageCircle className="w-6 h-6 cursor-pointer text-primary-200 hover:text-primary-400" />
+                <span className="absolute top-0 right-0 w-2 h-2 bg-secondary-700 rounded-full"></span>
+              </div>
+              <div className="relative hidden md:block"></div>
+              </>):(<>
                     <Link href="/signin">
                         <Button                     variant="outline"
                         className='text-white border-white bg-transparent hover:bg-white hover:text-primary-700 rounded-lg'>
                             Sign In
                         </Button>
                     </Link>
-    
+    </>)}
                     <Link href="/signup">
                         <Button                     variant="outline"
                         className='text-white border-white bg-secondary-600 hover:bg-white hover:text-primary-700 rounded-lg'>
