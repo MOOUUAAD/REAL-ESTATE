@@ -41,9 +41,40 @@ const Navbar = () => {
                         </div>
                         
                     </Link>
+                    
+                    {isDashboardPage && authUser && (
+            <Button
+              variant="secondary"
+              className="md:ml-4 bg-primary-50 text-primary-700 hover:bg-secondary-500 hover:text-primary-50"
+              onClick={() =>
+                router.push(
+                  authUser.userRole?.toLowerCase() === "manager"
+                    ? "/managers/newproperty"
+                    : "/search"
+                )
+              }
+            >
+              {authUser.userRole?.toLowerCase() === "manager" ? (
+                <>
+                  <span className="hidden md:block ml-2">Add New Property</span>
+                </>
+              ) : (
+                <>
+                  <span className="hidden md:block ml-2">
+                    Search Properties
+                  </span>
+                </>
+              )}
+            </Button>
+          )}
+
                 </div>
-                <p className='text-primary-200 hidden md:block'>Discover your perfect rental apartment with our advanced search</p>
-                <div className='flex items-center gap-5 '>
+                {!isDashboardPage && (
+          <p className="text-primary-200 hidden md:block">
+            Discover your perfect rental apartment with our advanced search
+          </p>
+        )}
+                        <div className='flex items-center gap-5 '>
                     <Link href="/signin">
                         <Button                     variant="outline"
                         className='text-white border-white bg-transparent hover:bg-white hover:text-primary-700 rounded-lg'>
