@@ -9,12 +9,12 @@ const HeroSection = () => {
   return (
     <div className='relative text-center h-screen'>
         <Image 
-        src="/landing-splash.jpg"
+        src="/kara-eads-L7EwHkq1B2s-unsplash.jpg"
         alt="hero"
         fill
         className='object-cover object-center'
         priority />
-        <div className='absolute inset-0 bg-[rgb(0,0,0)]/55 '></div>
+        <div className='absolute inset-0 bg-[rgb(0,0,0)]/65 '></div>
         <motion.div
         initial={{ opacity:0, y:20}}
         animate={{ opacity:1, y:0}}
