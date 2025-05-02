@@ -60,15 +60,13 @@ const Navbar = () => {
                 authUser.userRole?.toLowerCase() === "manager"
                   ? "/managers/newproperty"
                   : "/search"
-              )
-            }
-          >
-                          {authUser.userRole?.toLowerCase() === "manager" ? (
-                <>
-                  <Plus className="h-4 w-4" />
-                  <span className="hidden md:block ml-2">Add New Property</span>
-                </>
-              ) : (
+              )}>
+                {authUser.userRole?.toLowerCase() === "manager" ? (
+                    <>
+                        <Plus className="h-4 w-4" />
+                        <span className="hidden md:block ml-2">Add New Property</span>
+                    </>
+                ) : (
                 <>
                   <Search className="h-4 w-4" />
                   <span className="hidden md:block ml-2">
@@ -80,8 +78,8 @@ const Navbar = () => {
           )}
         </div>
         {!isDashboardPage && (
-          <p className="text-primary-200 hidden md:block">
-            Discover your perfect rental apartment with our advanced search
+          <p className="text-primary-200 text-base hidden md:block">
+            Your next apartment is just a search away.
           </p>
         )}
         <div className="flex items-center gap-5">
@@ -150,13 +148,13 @@ const Navbar = () => {
                             Sign In
                         </Button>
                     </Link>
-    </>)}
+
                     <Link href="/signup">
                         <Button  variant="outline"
                         className='text-white border-white bg-secondary-600 hover:bg-white hover:text-primary-700 rounded-lg'>
                             Sign Up
                         </Button>
-                    </Link>
+                    </Link>     </>)}
                 </div>
                 </div>
             </div>
