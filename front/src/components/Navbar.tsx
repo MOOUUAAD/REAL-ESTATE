@@ -95,7 +95,7 @@ const Navbar = () => {
               </div>
 
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-2 focus:outline-none">
+                <DropdownMenuTrigger className="flex items-center gap-2 focus:outline-none cursor-pointer">
                   <Avatar>
                     <AvatarImage src={authUser.userInfo?.image} />
                     <AvatarFallback className="bg-primary-600">

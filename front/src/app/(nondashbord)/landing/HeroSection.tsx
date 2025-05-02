@@ -36,7 +36,7 @@ const HeroSection = () => {
                     className='w-full max-w-lg rounded-none rounded-l-xl border-none bg-white h-12'/>
                     <Button 
                     onClick={()=>{}}
-                    className='bg-secondary-500 text-white rounded-none rounded-r-xl border-none hover:bg-secondary-600 h-12'
+                    className='bg-secondary-500 text-white rounded-none rounded-r-xl border-none hover:bg-secondary-600 h-12 cursor-pointer'
                     >Search</Button>
                 </div>
             </div>
