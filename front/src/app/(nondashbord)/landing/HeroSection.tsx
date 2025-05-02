@@ -22,10 +22,10 @@ const HeroSection = () => {
         className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
             <div className='max-w-4xl mx-auto px-16 sm:px-12 w-full'>
                 <h1 className='text-4xl md:text-5xl font-bold text-white mb-4'>
-                Find a residence that reflects your standards and style.
+                Make your home a reflection of your unique taste.
                 </h1>
                 <p className='text-lg md:text-xl text-white !mb-8'>
-                Find your ideal home among properties tailored for comfort and convenience.
+                Designed for your rhythm. Built for your peace.
                 </p>
                 <div className='flex justify-center'>
                     <Input
