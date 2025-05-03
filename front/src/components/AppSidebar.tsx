@@ -107,19 +107,19 @@ const AppSidebar = ({userType} : AppSidebarProps) => {
                     isActive
                       ? "bg-gray-100"
                       : "text-gray-600 hover:bg-gray-100",
-                    open ? "text-blue-600" : "ml-[5px]"
+                    open ? "text-secondary-500" : "ml-[5px]"
                   )}
                 >
                   <Link href={link.href} className="w-full" scroll={false}>
                     <div className="flex items-center gap-3">
                       <link.icon
                         className={`h-5 w-5 ${
-                          isActive ? "text-blue-600" : "text-gray-600"
+                          isActive ? "text-secondary-500" : "text-gray-600"
                         }`}
                       />
                       <span
                         className={`font-medium ${
-                          isActive ? "text-blue-600" : "text-gray-600"
+                          isActive ? "text-secondary-500" : "text-gray-600"
                         }`}
                       >
                         {link.label}
