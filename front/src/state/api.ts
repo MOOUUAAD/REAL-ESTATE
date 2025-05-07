@@ -102,8 +102,8 @@ export const api = createApi({
       },
     }),
 
-    
+
   }),
 });
 
-export const { useGetAuthUserQuery } = api;
+export const { useGetAuthUserQuery, useUpdateTenantSettingsMutation, useUpdateManagerSettingsMutation } = api;
