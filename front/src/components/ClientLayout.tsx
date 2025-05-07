@@ -1,12 +1,13 @@
+// src/components/ClientLayout.tsx
 "use client";
 
+import React, { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useGetAuthUserQuery } from "@/state/api";
 import Navbar from "@/components/Navbar";
 import { NAVBAR_HEIGHT } from "@/lib/constants";
-import { useGetAuthUserQuery } from "@/state/api";
-import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   const { data: authUser, isLoading: authLoading } = useGetAuthUserQuery();
   const router = useRouter();
   const pathname = usePathname();
@@ -32,7 +33,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="h-full w-full">
       <Navbar />
       <main
-        className={`h-full flex w-full flex-col`}
+        className="h-full flex w-full flex-col"
         style={{ paddingTop: `${NAVBAR_HEIGHT}px` }}
       >
         {children}
@@ -41,4 +42,4 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default Layout;
+export default ClientLayout;
