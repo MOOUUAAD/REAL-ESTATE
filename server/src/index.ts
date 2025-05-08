@@ -8,6 +8,7 @@ import { authMiddleware } from "./middleware/authMiddleware";
 /* ROUTE IMPORT */
 import tenantRoutes from "./routes/tenantRoutes";
 import managerRoutes from "./routes/managerRoutes";
+import propertyRoutes from "./routes/propertyRoutes";
 
 dotenv.config();
 const app = express();
@@ -23,6 +24,8 @@ app.get("/", (req, res) => {
     res.send("THIS IS THE HOME ROUTE!");
 });
 
+
+app.use("/properties", propertyRoutes);
 app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
 app.use("/managers", authMiddleware(["manager"]), managerRoutes);
 
