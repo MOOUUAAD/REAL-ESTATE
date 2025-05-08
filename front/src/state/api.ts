@@ -16,8 +16,9 @@ export const api = createApi({
     prepareHeaders: async (headers) => {
       const session = await fetchAuthSession();
       const { idToken } = session.tokens ?? {};
-      if (idToken) {
-        headers.set("Authorization", `Bearer ${idToken}`);
+
+      if (idToken?.toString()) {
+        headers.set("Authorization", `Bearer ${idToken?.toString()}`);
       }
       return headers;
     },
@@ -44,7 +45,10 @@ export const api = createApi({
           if (
             userDetailsResponse.error &&
             userDetailsResponse.error.status === 404
+
           ) {
+            console.log("user" , user);
+            
             userDetailsResponse = await createNewUserInDatabase(
               user,
               idToken,
@@ -101,9 +105,11 @@ export const api = createApi({
         });
       },
     }),
-
-
   }),
 });
 
-export const { useGetAuthUserQuery, useUpdateTenantSettingsMutation, useUpdateManagerSettingsMutation } = api;
+export const {
+  useGetAuthUserQuery,
+  useUpdateTenantSettingsMutation,
+  useUpdateManagerSettingsMutation,
+} = api;

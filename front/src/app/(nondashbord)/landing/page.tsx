@@ -7,6 +7,7 @@ import CallToActionSection from './CallToActionSection'
 import FooterSection from './FooterSection'
 
 function Landing() {
+  
   return (
     <div>
       <HeroSection/>
