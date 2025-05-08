@@ -237,7 +237,7 @@ export const getProperty = async (
       ).toString()}`;
       const geocodingResponse = await axios.get(geocodingUrl, {
         headers: {
-          "User-Agent": "RealEstateApp (justsomedummyemail@gmail.com",
+          "User-Agent": "RealEstateApp (mouadtestemail@gmail.com",
         },
       });
       const [longitude, latitude] =
