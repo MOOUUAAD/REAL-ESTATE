@@ -18,14 +18,14 @@ const Card = ({
     <div className="bg-white rounded-xl overflow-hidden shadow-lg w-full mb-5">
       <div className="relative">
         <div className="w-full h-48 relative">
-          {/* <Image
+          <Image
             src={imgSrc}
             alt={property.name}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             onError={() => setImgSrc("/placeholder.jpg")}
-          /> */}
+          />
         </div>
         <div className="absolute bottom-4 left-4 flex gap-2">
           {property.isPetsAllowed && (
